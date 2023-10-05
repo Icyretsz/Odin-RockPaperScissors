@@ -1,2 +1,2 @@
-# Odin-RockPaperScizzors
-A rock paper scizzors game website
+# Odin-RockPaperScissors
+A rock paper scissors game website
