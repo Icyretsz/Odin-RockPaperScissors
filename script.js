@@ -19,45 +19,45 @@ function getPlayerChoice() {
 let playerPoint=0,
     computerPoint=0;
 
-function announcePoint() {
+function logPoint() {
     console.log(`Computer - player: ${computerPoint} - ${playerPoint}`);
 }
 
-function coreGame(computerChoice, playerChoice) {
+function evaluateRound(computerChoice, playerChoice) {
     if (computerChoice === 'rock' && playerChoice === 'paper') {
         ++playerPoint;
         console.log(`Computer chose: ${computerChoice}, player chose: ${playerChoice}`);
-        announcePoint();
+        logPoint();
         console.log('Player wins!');
     }
     else if (computerChoice === 'paper' && playerChoice === 'scissors') {
         ++playerPoint;
         console.log(`Computer chose: ${computerChoice}, player chose: ${playerChoice}`);
-        announcePoint();
+        logPoint();
         console.log('Player wins!');
     }
     else if (computerChoice === 'scissors' && playerChoice === 'rock') {
         ++playerPoint;
         console.log(`Computer chose: ${computerChoice}, player chose: ${playerChoice}`);
-        announcePoint();
+        logPoint();
         console.log('Player wins!');
     }
     else if (computerChoice === playerChoice) console.log("It's a draw!");
     else {
         ++computerPoint;
         console.log(`Computer chose: ${computerChoice}, player chose: ${playerChoice}`);
-        announcePoint();
+        logPoint();
         console.log('Computer wins!')
     }
 }
 
-function gameControlBO5() {
+function mainGameLoopBO5() {
     while (playerPoint < 3 && computerPoint < 3) {
-        coreGame(getComputerChoice(), getPlayerChoice());
+        evaluateRound(getComputerChoice(), getPlayerChoice());
     }
     alert(`End. ` + (playerPoint === 3 ? 'Player wins!' : 'Computer wins!'));
     playerPoint=0;
     computerPoint=0;
 }
 
-gameControlBO5();
+mainGameLoopBO5();
